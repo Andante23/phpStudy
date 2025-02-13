@@ -34,7 +34,16 @@
 
         <body>     
               <!-- php로 디비 연동 테스트  -->
-              <?php  echo $_SESSION['nickname']; ?>
+             <div>
+                 <p>
+                        <span><?php  echo $_SESSION['nickname']; ?></span>      
+                 </p>
+            
+                 
+                 <p><a href="../border/login/logout.php">로그아웃</a></p>
+             </div>
+
+              
               
         </body>
 
