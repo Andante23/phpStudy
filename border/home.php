@@ -18,7 +18,7 @@
               
 
               <header>
-               <h1><a href="../home.php">Home</a></h1>
+               <h1><a href="../border/home.php">Home</a></h1>
 
                <ul>
                   <li>
