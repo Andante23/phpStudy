@@ -28,7 +28,8 @@
     	if(password_verify($password, $row['password_hash'])){
     		$_SESSION['useridea'] =$useridea;
     		$_SESSION['nickname'] = $row['nickname'];
-
+        // 글 작성시 이용하려고 사용합니다.
+        $_SESSION['id'] =$row['id'];
     		header("Location:../../border/home.php");
     		exit;
     	}else{
