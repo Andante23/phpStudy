@@ -25,7 +25,7 @@ $row = $sql -> fetch_array();
 </head>
 <body>
 
-    <form action="updatePro.php?id=<?php echo $row['bo_id']?>" method="post">
+    <form action="detailUpdatePro.php?id=<?php echo $row['bo_id']?>" method="post">
     <input type="text" name="up_title" id="up_title" value=<?php echo $row['title']?>>
     <textarea name="up_content" id="up_content" > <?php echo $row['content']     ?></textarea>
      <input type="submit" value="수정하기">

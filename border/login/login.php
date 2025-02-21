@@ -13,7 +13,7 @@
                <form method="post" action="loginPro.php">
                    <input type="text"  id="useridea" name="useridea"
                     required> <br>
-                   <input type="paswword" id="password" name="password" required> <br>
+                   <input type="password" id="password" name="password" required> <br>
 
                  <div>
                    <input type="submit" value="로그인">

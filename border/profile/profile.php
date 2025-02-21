@@ -19,6 +19,8 @@
 
 <p> 이름: <b><?php  echo $_SESSION['nickname']; ?> </b> </p>
 
+<a href="../profile/changePw.php">비밀번호 변경</a>
+
 
 
 

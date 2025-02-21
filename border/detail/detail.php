@@ -28,23 +28,23 @@
          
          echo "
            <p>
-         <a href = 'deletePro.php?id=$get_bo_id' disabled>삭제</a> 
+         <a href = 'detailDeletePro.php?id=$get_bo_id' disabled>삭제</a> 
            </p>
          ";
          echo "
          <p>
-       <a href = 'updatePro.php?id=$get_bo_id' disabled>수정</a> 
+       <a href = 'detailUpdatePro.php?id=$get_bo_id' disabled>수정</a> 
          </p>
        ";
        }else{
         echo "
         <p>
-      <a href = 'deletePro.php?id=$get_bo_id' >삭제</a> 
+      <a href = 'detailDeletePro.php?id=$get_bo_id' >삭제</a> 
         </p>
       ";
       echo "
       <p>
-    <a href = 'update.php?id=$get_bo_id' >수정</a> 
+    <a href = 'detailUpdate.php?id=$get_bo_id' >수정</a> 
       </p>
     ";
        }
