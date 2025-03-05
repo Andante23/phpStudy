@@ -14,7 +14,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link href="../style/default.css" rel="stylesheet">
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  
+  <script src="../js/input.js"  defer></script>
     <style>
         .fcontainer{ margin: 10em; justify-content:start }
             </style>
@@ -50,44 +50,6 @@ session_start();
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <script>
-      let warnResT = document.getElementById('warn_res_title');
-      let warnResP = document.getElementById('warn_res');
-      let content = document.getElementById('content');
-      let title = document.getElementById('title');
-
-
-         content.addEventListener("input",  function checkContentLength(){
-          let convArr = content.value.split("");
-          let res = "";
-           if (convArr.length === 300) {
-              res = "300글자이네요"; 
-          } else {
-              res = ""; 
-          }
-          let newBtag = document.createElement("b"); 
-          newBtag.textContent = res;
-          warnResP.innerHTML ='';
-          warnResP.appendChild(newBtag);          
-         }
-);
-
-
-         title.addEventListener("input",  function checkContentLength(){
-          let convArr = title.value.split("");
-          let res = "";
-           if (convArr.length === 30) {
-              res = "30글자이네요"; 
-          } else {
-              res = ""; 
-          }
-          let newBtag = document.createElement("b"); 
-          newBtag.textContent = res;
-          warnResT.innerHTML ='';
-          warnResT.appendChild(newBtag);          
-         }
-);
-     
-    </script>
+    
 </body>
 </html>
