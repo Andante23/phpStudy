@@ -23,12 +23,7 @@ if (!isset($_SESSION['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>게시판 홈페이지</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-   <style>
-       .listStyle{
-        list-style-type: none;
-       }
-   </style>
-
+    <script src="js/tblSearch.js" defer></script>
 </head>
 
 
@@ -39,7 +34,7 @@ if (!isset($_SESSION['id'])) {
          게시판
       </h1>
 
-      <ul class="d-flex align-items-center  m-3 listStyle" >
+      <ul class="d-flex align-items-center  m-3 listStyle"  style=" list-style-type: none;" >
         <li><a><b> <?php echo $_SESSION['nickname'] ?></b></a></li>
            <li>  <a href="../border/write/write.php" class="p-3">글쓰기</a></li>
            <li> <a href="../border/profile/profile.php" class="p-3">MY 프로필</a></li>
@@ -48,8 +43,16 @@ if (!isset($_SESSION['id'])) {
       </ul>
     </header>
 
+
+    
+
     <div class="container mt-5">
-        <h2 class="mb-4">게시판 목록</h2>
+        
+
+
+       
+           
+         
 
         <?php
        
@@ -62,7 +65,8 @@ if (!isset($_SESSION['id'])) {
         $result = $con->query($query);
 
         if ($result && $result->num_rows > 0) {
-            echo '<table class="table table-bordered">';
+            echo ' <input type="search" value="검색" id= "table_search"  >';
+            echo '<table id="table" class="table table-bordered">';
             echo '<thead class="table-dark">
                     <tr>
                         <th>제목</th>
@@ -73,9 +77,7 @@ if (!isset($_SESSION['id'])) {
 
             while ($row = $result->fetch_assoc()) { 
                 echo "<tr>
-                        <td><a href='../border/detail/detail.php?id={$row['bo_id']}'>
-    {$row['title']}
-    </a></td>
+                        <td><a href='../border/detail/detail.php?id={$row['bo_id']}'>{$row['title']}</a></td>
                         <td>{$row['nickname']}</td>
                       </tr>";
             }
@@ -91,5 +93,14 @@ if (!isset($_SESSION['id'])) {
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+   
+
+
+ 
+  </script>
+
+
+
 </body>
 </html>
