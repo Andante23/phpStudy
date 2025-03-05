@@ -1,6 +1,8 @@
 <?php
 
+  try{
       include "../db/dbconn.php";
+  
 
    session_start();
 
@@ -30,7 +32,7 @@
     		$_SESSION['nickname'] = $row['nickname'];
         // 글 작성시 이용하려고 사용합니다.
         $_SESSION['id'] =$row['id'];
-    		header("Location:../../border/home.php");
+    		echo " <script> window.location.replace('../../border/home.php'); </script> ";
     		exit;
     	}else{
     		   header("Content-Type: text/html; charset=UTF-8");
@@ -46,6 +48,10 @@
 
   $con -> close();
 
+}catch (Exception $e) {
+  echo "Exception". $e ->getcode().": ".$e -> getMessage()."<br />".
+     " in ". $e->getFile()." on line ". $e -> getLine()."<br />";
+}
 
 
 ?>

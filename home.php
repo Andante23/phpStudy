@@ -42,8 +42,8 @@ if (!isset($_SESSION['id'])) {
       <ul class="d-flex align-items-center  m-3 listStyle" >
         <li><a><b> <?php echo $_SESSION['nickname'] ?></b></a></li>
            <li>  <a href="../border/write/write.php" class="p-3">글쓰기</a></li>
-      
-           <li> <a href='../border/profile/profile.php'>MY 프로필</a></li>
+           <li> <a href="../border/profile/profile.php" class="p-3">MY 프로필</a></li>
+           <li> <a href="../border/login/logout.php">로그아웃</a></li>
 
       </ul>
     </header>
@@ -52,12 +52,12 @@ if (!isset($_SESSION['id'])) {
         <h2 class="mb-4">게시판 목록</h2>
 
         <?php
-        // Ensure database connection is available
+       
         if (!$con) {
             die("<div class='alert alert-danger'>데이터베이스 연결 실패: " . mysqli_connect_error() . "</div>");
         }
 
-        // Fetch data from the database
+       
         $query = "SELECT board.title, register.nickname,board.bo_id FROM board INNER JOIN register ON board.user_id = register.id";
         $result = $con->query($query);
 
@@ -85,7 +85,7 @@ if (!isset($_SESSION['id'])) {
             echo "<div class='alert alert-warning'>게시물이 없습니다.</div>";
         }
 
-        // Close database connection
+       
         $con->close();
         ?>
     </div>

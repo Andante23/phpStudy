@@ -27,8 +27,8 @@ try{
 
       echo 
       "
-      <script> alert('계정 삭제에 실패하였습니다.'); location.href = '../profile/profile.php'; </script>
-      "
+      <script> alert('계정 삭제에 실패하였습니다.'); location.href = '../profile/profile.php'; </script> 
+      " ;
 }
 
 }catch (Exception $e) {
