@@ -1,23 +1,30 @@
 
 <?php
 
+ require 'vendor/autoload.php';
 
-  $localhost = 'localhost';
-  $user = 'root';
-  $password = '1234';
-  $db = 'board';
+ use Dotenv\Dotenv;
 
-
+// 현재 디렉토리 기준으로 .env 파일 로드
+$dotenv = Dotenv::createImmutable(__DIR__,'/border');
+$dotenv->load();
   
-  $con = new  mysqli($localhost,$user,$password ,$db);
-  // echo $con -> host_info . "\n";
+
+
+  $localhost = $_ENV['DB_URL'];
+  $user = $_ENV['DB_USER'];
+  $pw = $_ENV['DB_PW'];
+  $db = $_ENV['DB'];
+
+   $con = new  mysqli($localhost,$user,$pW ,$db);
+
 
   if($con -> connect_error){
   	die("연결 실패 : ". $conn -> connect_error);
   }
    
   
-  // echo "연결 성공"
+
 
 
 ?>
