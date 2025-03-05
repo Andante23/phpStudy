@@ -15,16 +15,14 @@ session_start();
      <link href="../style/default.css" rel="stylesheet">
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <script src="../js/write.js"  defer></script>
-    <style>
-        .fcontainer{ margin: 10em; justify-content:start }
-            </style>
+   
 
   </head>
 
     <title>Document</title>
 </head>
 <body>
-  <div class="d-flex justify-content-center fcontainer">
+  <div class="d-flex justify-content-center "  style="margin: 10em; justify-content:start">
       <form action="writePro.php" method="post">
       <p>
       <label htmlfor="title">글제목</label><br>

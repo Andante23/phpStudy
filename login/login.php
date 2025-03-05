@@ -15,26 +15,36 @@
 
         }
 
+       .fcontainer > form  > .fc_text_input , 
+       .fcontainer > form  > .fc_pw_input {
+           width: 360px;
+           height: 40px;
+           margin:10px;
+       }
+
+
       
+
     </style>
         </head>
 
         <body>     
               <div class="d-flex justify-content-center fcontainer">
                <form method="post" action="loginPro.php">
-                   <input type="text"  id="useridea" name="useridea" style="width:360px;height:40px; margin:10px;" 
+                   <input type="text"  id="useridea" name="useridea"  class="fc_text_input" 
                     required> <br>
-                   <input type="password" id="password" name="password" style="width:360px;height:40px;margin:10px;" required> <br>
+                   <input type="password" id="password" name="password"  class="fc_pw_input" required> <br>
 
-                 <div class="d-flex justify-content-end align-center" >
-                   <input type="submit" value="로그인" 
-                   style="idth:360px;height:40px; margin:2px;"
-                   class="btn btn-primary">
+                 <div class="d-flex justify-content-end align-center " style="margin: 10px;  " >
+                   <input type="submit" value="로그인"  
+                   class="btn btn-primary w-50" >
                    <input type="reset" value="지우기"
-                    class="btn btn-danger" 
-                     style="idth:360px;height:40px;">
+                    class="btn btn-danger w-50" style="margin-left:1.3px;" >
                   </div>
-                   아이디가 없으신가요? <a href="../join/join.php">회원가입</a>
+                   <p class="text-center" style="padding: 3px;">
+                        아이디가 없으신가요? <a href="../join/join.php">회원가입</a>
+                   </p>
+                  
                </form>
 
               

@@ -11,8 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link href="../style/default.css" rel="stylesheet">
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  </head>
-
     <title>Document</title>
 </head>
 <body>
@@ -24,7 +22,7 @@
 <p> 이름: <b><?php  echo $_SESSION['nickname']; ?> </b> </p>
 
 <a href="../profile/changePw.php">비밀번호 변경</a>
-<!-- <a href="../profile/profileDelete.php" >계정 삭제</a>    아직 구현 안됨    -->
+<a href="../profile/profileDelete.php" >계정 삭제</a>    
 
 
 
