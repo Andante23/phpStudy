@@ -4,7 +4,9 @@
       let title = document.getElementById('title');
 
 
-         content.addEventListener("input",  function checkContentLength(){
+
+
+         content.addEventListener("input",  function(){
           let convArr = content.value.split("");
           let res = "";
            if (convArr.length === 300) {
@@ -20,7 +22,7 @@
 );
 
 
-         title.addEventListener("input",  function checkContentLength(){
+         title.addEventListener("input",  function(){
           let convArr = title.value.split("");
           let res = "";
            if (convArr.length === 30) {

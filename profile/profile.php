@@ -24,7 +24,7 @@
 <p> 이름: <b><?php  echo $_SESSION['nickname']; ?> </b> </p>
 
 <a href="../profile/changePw.php">비밀번호 변경</a>
-<a href="../profile/profileDelete.php" >계정 삭제</a>
+<!-- <a href="../profile/profileDelete.php" >계정 삭제</a>    아직 구현 안됨    -->
 
 
 
