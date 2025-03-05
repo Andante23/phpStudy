@@ -1,4 +1,6 @@
 <?php
+
+try{
 session_start();
 include "../db/dbconn.php";
 
@@ -23,6 +25,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 }
 
+}catch (Exception $e) {
+  echo "Exception". $e ->getcode().": ".$e -> getMessage()."<br />".
+     " in ". $e->getFile()." on line ". $e -> getLine()."<br />";
+}
 
 
 

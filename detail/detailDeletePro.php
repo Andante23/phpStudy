@@ -1,6 +1,7 @@
 
 <?php
 
+try{
 include "../db/dbconn.php";
 session_start();
 
@@ -19,6 +20,12 @@ if($result ){
       document.location.href='../border/home.php'
     </script>";
 }
+
+}catch (Exception $e) {
+  echo "Exception". $e ->getcode().": ".$e -> getMessage()."<br />".
+     " in ". $e->getFile()." on line ". $e -> getLine()."<br />";
+}
+
 
 ?>
 

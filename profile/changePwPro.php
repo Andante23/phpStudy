@@ -1,5 +1,6 @@
 <?php
 
+try{
    session_start(); // 세션이 없으면 8번 라인이 시작안함 
    include "../../border/db/dbconn.php";
 
@@ -47,5 +48,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
 $con -> close();
+
+}catch (Exception $e) {
+  echo "Exception". $e ->getcode().": ".$e -> getMessage()."<br />".
+     " in ". $e->getFile()." on line ". $e -> getLine()."<br />";
+}
 
 ?>

@@ -1,5 +1,6 @@
 <?php
 
+try{
 
 include "../db/dbconn.php";   
 
@@ -33,11 +34,13 @@ if($wQuery -> execute()){
 
 }
 
+}catch (Exception $e) {
+  echo "Exception". $e ->getcode().": ".$e -> getMessage()."<br />".
+     " in ". $e->getFile()." on line ". $e -> getLine()."<br />";
+}
 
 
 
-
-// INSERT 되었는지 체크를 해야합니다. 
 
 
 

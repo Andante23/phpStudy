@@ -1,5 +1,8 @@
 <?php
 
+
+try{
+
    include "../db/dbconn.php";
 
 
@@ -43,7 +46,10 @@
 
    }
 
-
+}catch (Exception $e) {
+  echo "Exception". $e ->getcode().": ".$e -> getMessage()."<br />".
+     " in ". $e->getFile()." on line ". $e -> getLine()."<br />";
+}
 
 
 
