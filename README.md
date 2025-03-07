@@ -37,3 +37,9 @@ Server built:   2024-10-02T12:40:51
 - 프로필 페이지  / 비밀번호 변경 / 계정 탈퇴 
 - 로그인 / 로그아웃 / 회원가입 
 
+----
+
+### ScreenShot
+
+![image](https://github.com/user-attachments/assets/8f8ab4bb-5548-4009-9b84-5b39e7e83e5c)
+
