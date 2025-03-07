@@ -32,7 +32,7 @@
     		$_SESSION['nickname'] = $row['nickname'];
         // 글 작성시 이용하려고 사용합니다.
         $_SESSION['id'] =$row['id'];
-    		echo " <script> window.location.replace('../../border/home.php'); </script> ";
+    		header("Location: ../../home.php");
     		exit;
     	}else{
     		   header("Content-Type: text/html; charset=UTF-8");

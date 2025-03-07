@@ -17,7 +17,7 @@ if($result ){
 
     echo "<script>
     alert('글이 삭제되었습니다.')
-      document.location.href='../border/home.php'
+      document.location.href='../home.php'
     </script>";
 }
 

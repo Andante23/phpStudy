@@ -30,7 +30,7 @@ try{
      if($query -> execute()){
          echo "<script>
               alert('회원가입 완료'); 
-              window.location.href='../../border/login/login.php';
+              window.location.href='../login/login.php';
               </script>";
          
      }else{
