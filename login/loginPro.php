@@ -1,6 +1,6 @@
 <?php
    
-    require_once __DIR__ . '/../model/UserModel.php';
+    require_once __DIR__ . '/../model/AuthModel.php';
   
 
 try{
@@ -17,7 +17,7 @@ try{
    	    exit;
    }
 
-    $UserModel = new UserModel();
+    $UserModel = new AuthModel();
     $UserModel -> userLogin($useridea,$password);
 
   }

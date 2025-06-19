@@ -14,54 +14,62 @@ require_once __DIR__ . '/../core/database.php';
 
 
 
-   // 사용자  회원가입 
-   public function insertData($useridea , $password , $nickname , $age){      
-      $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-      $stmt = $this->db->prepare("INSERT INTO register (useridea, password_hash, nickname, age) VALUES (?, ?, ?, ?)");
-      
-      if($stmt->execute([$useridea, $hashedPassword, $nickname, $age])){
-          //  성공
-        header("Content-Type: text/html; charset=UTF-8");
-        echo "<script>alert('회원가입성공');";
-        echo "window.location.replace('login.php');</script>";
-        exit;
-      }else{
-         //  실패
-        header("Content-Type: text/html; charset=UTF-8");
-        echo "<script>alert('아이디 또는 비밀번호가 잘못되었습니다.');";
-        echo "window.location.replace('join.php');</script>";
-        exit;
-      }
-    
-    }
-
-
-    // 사용자 로그인
-    public function userLogin($useridea,$password){
   
-       $stmt = $this -> db->prepare("SELECT * FROM register WHERE useridea = ? ");
-       $stmt->execute([$useridea]);
 
+   // 유저 비밀번호 변경
+    public function changePw($password , $up_id){
+        $new_Pw_hash = password_hash($curPw, PASSWORD_DEFAULT);
 
-         $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        $result = $this-> prepare("UPDATE register SET password_hash = '$new_Pw_hash'  WHERE id = '$up_id '" );
 
-      if ($user && password_verify($password, $user['password_hash'])) {
-        // 로그인 성공
-        $_SESSION['useridea'] = $user['useridea'];
-        $_SESSION['nickname'] = $user['nickname'];
-        $_SESSION['id'] = $user['id'];  
+      if($result ){
+         echo "<p>비밀번호가". "<strong>$curPw</strong>"."로 변경되었으므로 로그아웃합니다.</p>";
+       
+        // 4초뒤에 logout페이지로 이동합니다.
+        // 이중에서 사이트 비번을 적으려는 사람들을
+        // 위해서  다음과 같이 작성하였습니다. 
+        echo "<script> 
+       setTimeout(function(){
+           window.location.href = '../../border/login/logout.php';
+       },4000);
+       </script>
+       ";
+        }else{
+  	  echo "비밀번호 변경에 실패하였습니다.";
+  }
 
-        header("Location: ../index.php");
-        exit;
-       } else {
-         // 로그인 실패
-         header("Content-Type: text/html; charset=UTF-8");
-         echo "<script>alert('아이디 또는 비밀번호가 잘못되었습니다.');";
-         echo "window.location.replace('login.php');</script>";
-         exit;
     }
-    }
-   } 
 
+
+
+    public function deleteUser($del_value_id){
+       
+      try{
+      // db의 사용자 테이블을 찾는다.  >>> 삭제를 시작한다. 관련 글도 같이 삭제한다. 
+      $stmt = $this -> db->prepare("DELETE FROM register WHERE id = :id  ");
+
+      $stmt->bindParam(':id', $del_value_id, PDO::PARAM_INT);
+         $result = $stmt->execute();
+
+        if($result){ // 성공하면 
+                session_destroy();
+         echo "
+          <script>
+          alert('계정삭제되었습니다.');  
+          location.href = '../join/join.php';
+          </script>
+              " 	 ; 
+           }else{
+              echo 
+               "
+              <script> alert('계정 삭제에 실패하였습니다.'); location.href = '../profile/profile.php'; </script> 
+              " ;
+              }
+                 } catch (PDOException $e) {
+                  echo "DB 오류: " . $e->getMessage();
+          }
+
+          } 
+  }
 
 ?>
