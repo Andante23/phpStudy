@@ -1,0 +1,9 @@
+{
+    "name": "andante/html",
+    "autoload": {
+        "psr-4": {
+            "Andante\\Html\\": "src/"
+        }
+    },
+    "require": {}
+}

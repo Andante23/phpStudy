@@ -1,4 +1,5 @@
 <?php 
+require__DIR__ . '/vendor/autoload.php';
 session_start();
 include "core/database.php";
 if (!isset($_SESSION['id'])) {  
