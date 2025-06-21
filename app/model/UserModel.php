@@ -1,6 +1,6 @@
 <?php
 session_start(); // $_SESSION 변수를 사용하기 위해 필요함 
-require_once __DIR__ . '/../core/database.php';
+require_once '/var/www/html/phpStudy/core/database.php';
 
   class UserModel  {
 
